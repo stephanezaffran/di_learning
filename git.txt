@@ -1,0 +1,20 @@
+
+IF YOU’VE DONE THIS KIND OF THING BEFORE
+git@github.com:stephanezaffran/test.git
+
+
+CREATE A NEW REPOSITORY ON THE COMMAND LINE
+
+echo "# first-exercise" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:stephanezaffran/first-exercise.git
+git push -u origin main
+
+PUSH AN EXISTING REPOSITORY FROM THE COMMAND LINE
+git remote add origin git@github.com:stephanezaffran/first-exercise.git
+git branch -M main
+git push -u origin main
+
