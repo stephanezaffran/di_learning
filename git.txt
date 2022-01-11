@@ -1,5 +1,5 @@
 
-IF YOU’VE DONE THIS KIND OF THING BEFORE
+IF YOUâ€™VE DONE THIS KIND OF THING BEFORE
 git@github.com:stephanezaffran/test.git
 
 
@@ -18,3 +18,4 @@ git remote add origin git@github.com:stephanezaffran/first-exercise.git
 git branch -M main
 git push -u origin main
 
+git pull origin main
