@@ -49,4 +49,5 @@ console.log("exercise xp 2")
 let str1 = "mix" ;
 let str2 = "pod";
 let strSwapped = str1.slice(0,2)+str2.slice(0,2);
+let strConcat = str1+str2;
 console.log(strSwapped);
