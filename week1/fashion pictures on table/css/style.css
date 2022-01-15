@@ -1,0 +1,57 @@
+
+
+.icon {
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 120px;
+    width: 25px;
+    height: 25px;
+    color: black;
+    z-index: 2;
+}
+.icon:hover {
+    margin-top: 10px;
+    margin-left: 110px;
+    width: 130px;
+    height: 130px;
+}
+ 
+.product {
+    position: relative;
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+    height: 80%;
+}
+.contenair{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(111, 116, 112);
+}
+ul {
+  
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 1px;
+}
+.logo {
+    vertical-align:top;
+}
+header
+{
+    display: inline-block;
+  }
+ nav ul
+ {
+         list-style-type:none;
+  }
+            
+ nav li
+ {
+      width: 200px;
+     height: 20px;
+      border: 1px solid black;
+       position: relative;
+       display: inline-block;
+ }
+

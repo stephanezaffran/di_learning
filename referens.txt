@@ -1,0 +1,36 @@
+flexbox froggy => entrainemet flexbox
+
+grid garden => entrainemet grid
+
+javascript
+
+let toto = string.lenght;
+
+indexOf("a") -- if exist on the string, return the place, if not exist, return -1.
+casse sensitive, r != R  
+start 0
+
+substring(start index, end index(not included)) --- hello.substring(1,3) = el
+substring(start index) --- hello.substring(1) = until the end -- ello
+
+string1.concat()
+string1.toLowerCase()
+string1.toUpperCase()
+tring1.replace()
+string1.trim() --- retire space from begining and end (     hello     ) get (hello)
+strin(param) (is not a number ) return true if the param is not a number
+10.1234.toFix(0) = 10     --- arrondi a l,entier le plus proche
+10.1234.toFix(2) = 10.12  --- arrondi 2 number after virgule
+typeof var1 --- return number or sting
+boolean(10>9) return true
+
+
+array
+
+let array1 =[1,2,3,4]
+let array2 = [1,true,"str",null,undifined,[1,2,3,4]]
+
+
+
+ 
+
