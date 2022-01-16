@@ -1,0 +1,5 @@
+modal 
+
+alert()
+prompt()
+confirm()
