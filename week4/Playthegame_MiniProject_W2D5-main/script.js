@@ -6,7 +6,7 @@ function playTheGame() {
 
             break;
         case true:
-            for (let i = 0; i > 3; i++) {
+            for (let i = 0; i < 3; i++) {
                 let number = parseInt(prompt("please  enter a number between 0 and 10 "))
                 if (typeof number != 'number') {
                     alert("Sorry Not a number, Goodbye")
