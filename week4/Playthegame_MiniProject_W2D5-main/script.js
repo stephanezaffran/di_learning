@@ -1,4 +1,8 @@
-function playTheGame() {
+let playTheGame = () => {
+    let number = ""
+    let computerNumber = Math.floor(Math.random() * 10);
+    let count = 0
+    let mytest = 0
     let play = confirm("do you want to play the game ?")
     switch (play) {
         case false:
@@ -6,28 +10,34 @@ function playTheGame() {
 
             break;
         case true:
-            for (let i = 0; i < 3; i++) {
-                let number = parseInt(prompt("please  enter a number between 0 and 10 "))
-                if (typeof number != 'number') {
+            while (true) {
+                if (count >= 3) {
+                    alert(`out of chances number was ${computerNumber} `)
+                    break
+                }
+                number = parseInt(prompt("please  enter a number between 0 and 10 "))
+                if (Number.isNaN(number)) {
                     alert("Sorry Not a number, Goodbye")
-
+                    break;
                 } else {
-                    if (number < 0 && number > 10) {
+
+                    if (number < 0 || number > 10) {
                         alert("Sorry it’s not a good number, Goodbye")
                         break;
                     } else {
-                        let computerNumber = Math.random();
                         if (test(computerNumber, number) == "equal") {
                             alert("winner");
+                            break
                         } else if (test(computerNumber, number) == "sup") {
                             alert("Your number is bigger then the computer's,guess again")
+                            count++;
                         } else if (test(computerNumber, number) == "inf") {
                             alert("Your number is smaller then the computer's,guess again")
+                            count++
                         }
                     }
                 }
             }
-            alert("ut of chances")
             break;
 
 
@@ -36,10 +46,9 @@ function playTheGame() {
     }
 }
 
-let test = (userNumber, computerNumber) => {
-    if (userNumber == computerNumber) { return "equal" }
-    if (userNumber > computerNumber) { return "sup" }
-    if (userNumber < computerNumber) { return "inf" }
+
+let test = (computerNumber, userNumber) => {
+    if (userNumber == computerNumber) { return "equal" } else if (userNumber > computerNumber) { return "sup" } else if (userNumber < computerNumber) { return "inf" }
 }
 
 // Outside of the playTheGame() function, create a new function named test(userNumber,computerNumber)
