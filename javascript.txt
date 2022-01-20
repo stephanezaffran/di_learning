@@ -6,5 +6,9 @@ confirm()
 
 .map --- > execute une fonction sur chaque element de l'array --array.map(x=>x+1) rajoute 1 a chaque element x de la liste
 .trim ---> retire les espaces 
+.some ----> fais un test sur chaque element array.some(e=>e) ..... a verifier
 
 foreach(x=> func)
+
+
+

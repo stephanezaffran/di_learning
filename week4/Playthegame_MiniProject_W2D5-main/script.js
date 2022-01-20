@@ -39,8 +39,6 @@ let playTheGame = () => {
                 }
             }
             break;
-
-
         default:
             break;
     }
