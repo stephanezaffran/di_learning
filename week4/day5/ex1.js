@@ -70,10 +70,10 @@ document.querySelectorAll('.list').forEach(Element => {
 
 // tentative 1 : j'ai cree un <li> que j'ai simplement ajoute a chaque ul ...
 // document.querySelectorAll('.list').forEach((item, index) => {
-    // // console.log(item)
-    // // console.log(index)
-    // console.log(li2[index])
-    // item.appendChild(li2[index]);
+// // console.log(item)
+// // console.log(index)
+// console.log(li2[index])
+// item.appendChild(li2[index]);
 // });
 // probleme, comme c'est un objet, ca l'ajoute au premier puis l'enleve pour l'ajouter au second 
 
@@ -102,22 +102,22 @@ li2.map(item => {
 
 document.querySelectorAll('.list').forEach((item, index) => {
 
-     console.log(item)
-     console.log(index)
-     
+    console.log(item)
+    console.log(index)
+
     //console.log(li2[index])
     item.appendChild(li2[index]);
-   
+
 });
 // document.querySelectorAll('.list').appendChild(li);
 // Delete the name Sarah from the second <ul>.
 
 //var c = ((a < b) ? 'minor' : 'major');
 let children = document.querySelectorAll('.list')[1].children
-//console.log(children)
-for(child of children){   // i can't use  .FOREACH or .MAP in htmlCollection .... to check
+    //console.log(children)
+for (child of children) { // i can't use  .FOREACH or .MAP in htmlCollection .... to check
     console.log(child)
-    child.textContent == "Sarah" && child.remove() ;
+    child.textContent == "Sarah" && child.remove();
     //console.log(e)
 }
 //children.map(e => console.log(e))
@@ -130,8 +130,9 @@ for(child of children){   // i can't use  .FOREACH or .MAP in htmlCollection ...
 // Add the classes university and attendance to the first <ul>.
 
 document.querySelectorAll('.list').forEach(Element => {
-    Element.classList.add('student_list') });
- document.querySelector('.list').classList.add('university' , 'attendance')
+    Element.classList.add('student_list')
+});
+document.querySelector('.list').classList.add('university', 'attendance')
 
 // Exercise 3 : Users And Style
 // Instructions
@@ -151,22 +152,42 @@ document.querySelectorAll('.list').forEach(Element => {
 
 // Add a “light blue” background color and some padding to the <div>.
 
-console.log( document.querySelectorAll('div'))
-//let div
-// // let divs = document.querySelectorAll('div') //.foreach(elem => { return  elem.textContent == "Users 2:"})
-// // for (d of divs){
-// //     d.textContent == "Users 2:" && (div = d)
-// // }
+console.log(document.querySelectorAll('div'))
+    //let div
+    // // let divs = document.querySelectorAll('div') //.foreach(elem => { return  elem.textContent == "Users 2:"})
+    // // for (d of divs){
+    // //     d.textContent == "Users 2:" && (div = d)
+    // // }
 
 let div
-document.querySelectorAll('div').forEach(elem => {  elem.textContent == "Users 2:" && (div = elem)})
+document.querySelectorAll('div').forEach(elem => { elem.textContent == "Users 2:" && (div = elem) })
 console.log(div)
 div.style.backgroundColor = "blue";
 div.style.paddingLeft = "50px";
 
 // Do not display the first name (John) in the list.
-//div.child .style. = "50px";
+let secondDiv = document.querySelector("#secondId > li").style.display = "none"
+
+
 
 // Add a border to the second name (Pete).
+
+document.querySelector('#secondId li:nth-child(2)').style.border = "1px solid"
+
 // Change the font size of the whole body.
-// Bonus: If the background color of the div is “light blue”, alert “Hello x and y” (x and y are the users in the div).
+//console.log(document.querySelector('#secondId').children)
+for (elem of document.querySelector('#secondId').children) {
+    elem.style.fontSize = "50px"
+}
+
+// Bonus: If the background color of the div is “light blue”, 
+//alert “Hello x and y” (x and y are the users in the div).
+let users = Array(2),
+    index = 0
+for (elem of document.querySelector('#secondId').children) {
+    console.log(elem.textContent)
+    users[index++] = elem.textContent;
+}
+console.log(document.querySelector('#secondDiv').style.backgroundColor)
+document.querySelector('#secondDiv').style.backgroundColor == "blue" && alert(`Hello ${users[0]} and  ${users[1]}`);
+// console.log(`Hello ${users[0]} and  ${users[1]}`)
