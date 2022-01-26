@@ -117,10 +117,36 @@ console.log(form.elements['submit'])
 
 let subFunction = (e) => {
 
-    console.log([...e.target].forEach(e => {
-        let valueOfInput = e.value;
-        valueOfInput != "" &&
-    }));
+    let answer = document.querySelector(".usersAnswer")
+    let liList = [];
+    let myForm = [...e.target].filter(e => e.value != "Submit")
+
+
+    //myForm.forEach(e => console.log("test " + e.value))
+    if (myForm.some(e => e.value == "")) {
+
+        console.log("ko")
+        alert("empty input error")
+        e.preventDefault();
+
+
+    } else {
+
+        myForm.forEach(e => {
+            let myLi = document.createElement("li")
+            let text = document.createTextNode(e.value);
+            myLi.appendChild(text);
+            liList.push(myLi)
+        });
+        console.log(liList);
+        liList.forEach(element => {
+            answer.appendChild(element)
+
+        });
+        console.log(liList);
+        e.preventDefault();
+    }
+
     e.preventDefault();
 }
 
