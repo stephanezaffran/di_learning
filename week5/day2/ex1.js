@@ -166,23 +166,29 @@ let mySubmit = form.addEventListener('submit', subFunction)
 // Create a global variable named allBoldItems.
 let allBoldItems
 
-// Create a function called getBold_items() that takes no parameter. This function should collect all the bold items inside the paragraph and assign them to the allBoldItems variable.
+// Create a function called getBold_items() that takes no parameter. 
+//This function should collect all the bold items inside the paragraph and assign them to the allBoldItems variable.
 let getBold_items = () => {
+         allBoldItems = document.querySelectorAll('strong')
+        console.log(allBoldItems);
 
     }
     // Create a function called highlight() that changes the color of all the bold text to blue.
 let highlight = () => {
-
+     getBold_items();
+    allBoldItems.forEach(e => e.style.color = "blue")
     }
     // Create a function called return_normal() that changes the color of all the bold text back to black.
 let return_normal = () => {
-
+    allBoldItems.forEach(e => e.style.color = "black")
     }
     // Call the function highlight() onmouseover (ie. when the mouse pointer is moved onto the paragraph), 
     //and the function return_normal() onmouseout (ie. when the mouse pointer is moved out of the paragraph). Look at this example
+    let allBoldItem
 let p = document.querySelector("#myP");
 p.addEventListener("mouseover", highlight)
 p.addEventListener("mouseout", return_normal)
+//p.addEventListener("click", getBold_items)
 
 // Exercice 4 : Volume Of A Sphere
 // Instructions
@@ -215,4 +221,5 @@ p.addEventListener("mouseout", return_normal)
 
 // Bonus Exercise 5 : Event Listeners
 // Instructions
-// Add as many events listeners as possible to one element on your webpage. Each listener should do a different thing, for instance- change position x, change position y, change color, change the font size… and more.
+// Add as many events listeners as possible to one element on your webpage. Each listener should do a different thing, for instance- change position x,
+// change position y, change color, change the font size… and more.
