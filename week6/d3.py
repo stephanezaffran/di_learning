@@ -56,39 +56,75 @@ print(listFloat)
 # Instructions
 # Using this list basket = ["Banana", "Apples", "Oranges", "Blueberries"];
 #
+list_basket = ["Banana", "Apples", "Oranges", "Blueberries"]
+
 # Remove “Banana” from the list.
+list_basket.remove("Banana")
 # Remove “Blueberries” from the list.
+list_basket.remove("Blueberries")
 # Add “Kiwi” to the end of the list.
+list_basket.append("Kiwi")
 # Add “Apples” to the beginning of the list.
+list_basket.insert(0, "Apples")
 # Count how many apples are in the basket.
+count_of_apples = list_basket.count("Apples")
 # Empty the basket.
+list_basket.clear()
 # Print(basket)
-#
+print(list_basket)
+
 #
 # Exercise 6 : Loop
 # Instructions
 # Write a while loop that will continuously ask the user for their name, unless the input is equal to your name.
 #
+name = ""
+while name != "stephane":
+    name = input("enter your name ")
 #
 # Exercise 7
 # Instructions
 # Given a list, use a loop to print out every element which has an even index.
 #
+my_basket = ["Banana", "Apples", "Oranges", "Blueberries"]
+for i, val in enumerate(my_basket):
+    if i % 2 == 0:
+        print(val)
+
+
 #
 # Exercise 8
 # Instructions
 # Create a loop that goes from 1500 to 2500 and prints all multiples of 5 and 7.
 #
+for val in range(1500, 2500):
+    if val % 5 == 0 or val % 7 == 0:
+        print(val)
 #
 # Exercise 9: Favorite Fruits
 # Instructions
 # Ask the user to input their favorite fruit(s) (one or several fruits).
+favorite_fruit = input("enter your favorite fruit one or several fruits, separate the fruits with a single space ")
+
 # Hint : Use the built in input method. Ask the user to separate the fruits with a single space, eg. "apple mango cherry".
 # Store the favorite fruit(s) in a list (convert the string of words into a list of words).
+favorite_fruit_array = favorite_fruit.split(" ")
+print(favorite_fruit_array)
+
 # Now that we have a list of fruits, ask the user to input a name of any fruit.
+
+choice_fruit = input("enter name of one fruit ")
+print(choice_fruit)
+
 # If the user’s input is in the favorite fruits list, print “You chose one of your favorite fruits! Enjoy!”.
+
+if choice_fruit in favorite_fruit_array:
+    print("You chose one of your favorite fruits! Enjoy!")
+
 # If the user’s input is NOT in the list, print, “You chose a new fruit. I hope you enjoy”.
 #
+else:
+    print("You chose a new fruit. I hope you enjoy")
 #
 # Exercise 10: Who Ordered A Pizza ?
 # Instructions
@@ -96,6 +132,7 @@ print(listFloat)
 # As they enter each topping, print a message saying you’ll add that topping to their pizza.
 # Upon exiting the loop print all the toppings on the pizza pie and what the total price is (10 + 2.5 for each topping).
 #
+
 #
 # Exercise 11: Cinemax
 # Instructions
