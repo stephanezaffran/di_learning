@@ -7,13 +7,16 @@
 # Expected output:
 # {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
 #
+keys = ['Ten', 'Twenty', 'Thirty']
+values = [10, 20, 30]
+my_dic ={}
 for item in zip(keys ,values):
-    print(item)
-
+    my_dic[item[0]] = item[1]
+print(my_dic)
 
 #
 # Exercise 2 : Cinemax #2
-# Instructions
+# Instructionsday
 # “Continuation of Exercise Cinemax from Week4Day2 XP”
 #
 # A movie theater charges different ticket prices depending on a person’s age.
@@ -27,6 +30,10 @@ for item in zip(keys ,values):
 #
 #
 # How much does each family member have to pay ?
+
+family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
+
+
 #
 # Print out the family’s total cost for the movies.
 # Bonus: Ask the user to input the names and ages instead of using the provided family variable (Hint: ask the user for names and ages and add them into a family dictionary that is initially empty).
