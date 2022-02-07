@@ -97,16 +97,17 @@ def show_magicians():
 	for magician in magicians:
 		print(magician)
 
-show_magicians()
+#show_magicians(magicians)
 # Write a function called make_great() that modifies the list of magicians by adding the phrase "the Great" to each magician’s name.
 
 def make_great():
-	for magician in magicians:
-		magician += " the great"
+	for index, magician in enumerate(magicians):
+		magician = magician + " the great"
+		magicians[index] = magician
 		print(magician)
 
 
 # Call the function make_great().
 make_great()
-# Call the funcyion show_magicians() to see that the list has actually been modified.
+# Call the function show_magicians() to see that the list has actually been modified.
 show_magicians()
