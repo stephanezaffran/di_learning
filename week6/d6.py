@@ -142,7 +142,7 @@ for x, y in more_on_zara.items():
 # 14. Print the value of the key number_stores. What just happened ?
 
 
-    print(brand["number_stores"])
+   print(brand["number_stores"])
 
 # we update the number of stores
 
