@@ -26,7 +26,7 @@ for x in range(3):
             number_of_symbols = 0
             decoded_message += code[index][x]
         else:
-            print(f"value of symbole : {code[index][x]}")
+           # print(f"value of symbole : {code[index][x]}")
             number_of_symbols += 1
             if number_of_symbols == 2:
                 decoded_message += " "
