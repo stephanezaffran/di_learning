@@ -111,7 +111,7 @@ class Zoo:
 # Create a method called add_animal that takes one parameter new_animal. This method adds the new_animal to the animals list as long as it isn’t already in the list.
     def add_animal(self, new_animal):
         if new_animal not in self.animals:
-          self.animals.append(new_animal)
+            self.animals.append(new_animal)
 
 
 # Create a method called get_animals that prints all the animals of the zoo.
@@ -127,13 +127,29 @@ class Zoo:
 
 # Create a method called sort_animals that sorts the animals alphabetically and groups them together based on their first letter.
     def sort_animals(self):
-        # sorted_animals = self.animals.sort()
-        for elem in sorted(self.animals):
 
+        dic_index = 1
+        my_dict = {}
+        self.animals.sort()
 
-            # util_func = lambda x: x[0]
-            # temp = sorted(test_list, key=util_func)
-            # res = [list(ele) for i, ele in groupby(temp, util_func)]
+        temp = []
+
+        for index, elem in enumerate(self.animals):
+            temp.append(elem)
+            print(f"elem {elem} index {index} ")
+            if index < len(self.animals)-1:
+                if self.animals[index][0] != self.animals[index+1][0]:
+                    my_dict[dic_index] = temp
+                    dic_index += 1
+                    temp = []
+            elif index == len(self.animals)-1:
+                my_dict[dic_index] = temp
+
+        print(my_dict)
+
+ # util_func = lambda x: x[0]
+ # temp = sorted(test_list, key=util_func)
+ # res = [list(ele) for i, ele in groupby(temp, util_func)]
 
 # Example
 #
@@ -148,6 +164,19 @@ class Zoo:
 # Create a method called get_groups that prints the animal/animals inside each group.
 #
 # Create an object called ramat_gan_safari and call all the methods.
+
+ramat_gan_safari = Zoo("ramat gan safari")
+ramat_gan_safari.add_animal("g")
+ramat_gan_safari.add_animal("c")
+ramat_gan_safari.add_animal("aa")
+ramat_gan_safari.add_animal("ab")
+ramat_gan_safari.add_animal("ba")
+ramat_gan_safari.add_animal("bb")
+ramat_gan_safari.add_animal("ta")
+ramat_gan_safari.add_animal("d")
+
+ramat_gan_safari.sort_animals()
+
 # Tip: The zookeeper is the one who will use this class.
 # Example
 # Which animal should we add to the zoo --> Giraffe
