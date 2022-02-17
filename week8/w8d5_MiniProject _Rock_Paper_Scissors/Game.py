@@ -15,27 +15,46 @@ from random import randint, choices
 
 class Game:
 	def __init__(self):
-
-
+		self.items = ["rock", "paper", "scissors"]
+		self.rules = {
+			"rock": "scissors",
+			"paper": "rock",
+			"scissors": "paper"
+		}
 
 	def get_user_item(self):
-		pass
+		while 1:
+			user_item = input("Enter your choice rock, paper or scissors ")
+			if user_item.lower() in self.items:
+				return user_item.lower()
+
 
 
 	def get_computer_item(self):
-		computer_choice = randint(0, 2)
-		print(computer_choice)
-
+		rand = randint(0, 2)
+		return self.items[rand]
+		#random.choice(self.item)
 
 	def get_game_result(self, user_item, computer_item):
-		pass
+		if user_item == computer_item:
+			return "same choice"
+		elif self.rules[user_item] == computer_item:
+			return "you win"
+		else:
+			return "you lost"
 
 	def play(self):
-		pass
+		#user_item = computer_choice =""
+		#while user_item == computer_choice:
+		user_item = self.get_user_item()
+		computer_choice = self.get_computer_item()
+		result = self.get_game_result(user_item, computer_choice)
+		print(f"You selected {user_item}, the computer selected {computer_choice}, {result}")
 
 
-Game().get_computer_item()
-
+var = true
+while var:
+	Game().play()
 # Get the user’s item (rock/paper/scissors) and remember it
 #
 # Get a random item for the computer (rock/paper/scissors) and remember it

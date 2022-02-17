@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f0b38cf-c410-471c-95a3-ab0581c47fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/week8/'w8d4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week8/w8d5_MiniProject _Rock_Paper_Scissors/Game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week8/w8d5_MiniProject _Rock_Paper_Scissors/Rock-Paper-Scissors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week8/w8d5_MiniProject _Rock_Paper_Scissors/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/week8/w8d5_MiniProject _Rock_Paper_Scissors/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week8/w8d5_MiniProject _Rock_Paper_Scissors/Rock-Paper-Scissors.py" beforeDir="false" afterPath="$PROJECT_DIR$/week8/w8d5_MiniProject _Rock_Paper_Scissors/Rock-Paper-Scissors.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
