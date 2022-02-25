@@ -36,12 +36,12 @@ b2 = Building("1 paris street")
 tom.move(b1)
 eli.move(b1)
 
-# print(len(b1.inhabitants))
-# print(b1.inhabitants[0].name)
-# print(b1.inhabitants[1].name)
-# print(eli.living_place)
-# tom.move(b1)
-# print(eli.living_place)
+print(len(b1.inhabitants))
+print(b1.inhabitants[0].name)
+print(b1.inhabitants[1].name)
+print(eli.living_place)
+tom.move(b1)
+print(eli.living_place)
 
 # Create a class City, it has the following attributes:
 # name (str)
