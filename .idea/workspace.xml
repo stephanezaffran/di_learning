@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36e9549c-6031-4d3d-9b3a-9cabcb49e36d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/python_commands.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wee10/w10d1_course_ex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wee10/w9d1_create_modules/calculator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wee10/w9d1_create_modules/operator.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/week9/w9d3_Ayal_MiniProject_CharactersGame.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/week9/w9d5_MiniProject_Air_Management.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -37,9 +41,35 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Python/Python310" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.w9d5_MiniProject_Air_Management">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\formation_python\week10" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.w10d2_xp">
+    <configuration name="w10d2_xp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="formation_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/week10" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/week10/w10d2_xp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="w9d5_MiniProject_Air_Management" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="formation_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,6 +114,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.w10d2_xp" />
         <item itemvalue="Python.w9d5_MiniProject_Air_Management" />
         <item itemvalue="Python.w9d5_miniProj_vaccin" />
       </list>
