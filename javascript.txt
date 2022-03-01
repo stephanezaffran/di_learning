@@ -8,7 +8,10 @@ confirm()
 .trim ---> retire les espaces 
 .some ----> fais un test sur chaque element array.some(e=>e) ..... a verifier
 
+.join
+.split
+.sort
+
 foreach(x=> func)
 
-
-
+console.log((str.split(' ').sort((x,y) => x[0].charCodeAt(0)-y[0].charCodeAt(0))).join('-'))

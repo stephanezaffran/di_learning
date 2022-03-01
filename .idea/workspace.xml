@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36e9549c-6031-4d3d-9b3a-9cabcb49e36d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/week9/w9d3_Ayal_MiniProject_CharactersGame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week9/w9d5_MiniProject_Air_Management.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascript.txt" beforeDir="false" afterPath="$PROJECT_DIR$/javascript.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week9/w9d3_MiniProject_CharactersGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/week9/w9d3_MiniProject_CharactersGame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/week9/w9d5_miniProj_vaccin.py" beforeDir="false" afterPath="$PROJECT_DIR$/week9/w9d5_miniProj_vaccin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,9 +37,30 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Python/Python310" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.w9d5_MiniProject_Air_Management">
+    <configuration name="w9d5_MiniProject_Air_Management" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="formation_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/week9" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/week9/w9d5_MiniProject_Air_Management.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="w9d5_miniProj_vaccin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="formation_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -53,6 +84,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.w9d5_MiniProject_Air_Management" />
         <item itemvalue="Python.w9d5_miniProj_vaccin" />
       </list>
     </recent_temporary>
@@ -68,15 +100,15 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/week9/w9d5_miniProj_vaccin.py</url>
-          <line>143</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

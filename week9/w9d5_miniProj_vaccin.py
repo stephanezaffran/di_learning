@@ -14,15 +14,25 @@
 # age (int), prioritary (bool)  and blood_type (str).  Its blood type can be “A”, “B”, “AB” or “O”.
 
 # It got no methods.
+from typing import List
+
 
 class Human:
-    def __init__(self, id_number:str, name: str, age: int, prioritary: bool, blood_type: str = "A"):
+    def __init__(self, id_number:str, name: str, age: int, prioritary: bool, blood_type: str = "A", family: List = []):
         self.id_number = id_number
         self.name = name
         self.age = age
         self.prioritary = prioritary
+        self.family = family
         if blood_type in ["A","B","AB","O"]:
             self.blood_type = blood_type
+
+    def add_family_member(self, person):
+        self.family.append(person)
+        person.family.append(self)
+
+    def is_in_family(self,person):
+        return person in self.family
 
     def __str__(self):
 	    return f" {'-'* 20}\nid_number: {self.id_number} \nname : {self.name} \nage:  {self.age} \nprioritary : {self.prioritary} \nblood_type:  {self.blood_type}"
@@ -38,23 +48,25 @@ class Node:
 
 class Head_list:
    def __init__(self):
-      self.first_elem = None
+      self.next_node = None
 
 
 class Queue:
     def __init__(self):
         self.humans_first_node = Head_list()
-        self.humans_waiting_first_node =  Head_list()
+        self.humans_waiting_first_node = Head_list()
         self.last_humans_node = self.humans_first_node
         self.human_waiting_last_node = self.humans_waiting_first_node
+        self.number_of_person = 0
 
 # add_person(self, person) Add a human to the queue, if he is older than 60 years old or a prioritary person, put him at the beginning of the list (at index 0) before every other.
     def add_person(self, person: Human):
         #if empty list , start with head_list
         if  self.humans_first_node == self.last_humans_node:
-            self.humans_first_node.first_elem = Node(person)
-            self.humans_first_node.first_elem.preview_node = self.humans_first_node
-            self.last_humans_node = self.humans_first_node.first_elem
+            self.humans_first_node.next_node = Node(person)
+            self.humans_first_node.next_node.preview_node = self.humans_first_node
+            self.last_humans_node = self.humans_first_node.next_node
+            self.number_of_person +=1
         #if there are nodes, add at the end for youngs or at the begging if old person
         else:
             #add at the end if not priority person
@@ -66,14 +78,14 @@ class Queue:
             else:
             #add at the begining for priority person
                 temp = Node(person)
-                temp.next_node = self.humans_first_node.first_elem
+                temp.next_node = self.humans_first_node.next_node
                 temp.next_node.preview_node = temp
                 temp.preview_node = self.humans_first_node
-                self.humans_first_node.first_elem = temp
+                self.humans_first_node.next_node = temp
 
 # find_in_queue(self, person) Returns the index of a human in the queue.
     def find_in_queue(self, person: Human):
-       temp = self.humans_first_node.first_elem
+       temp = self.humans_first_node.next_node
        while temp != self.last_humans_node:
             #print(f"id_number: {temp.human.id_number} name: {temp.human.name}")
             if temp.human.id_number == person.id_number:                
@@ -106,10 +118,11 @@ class Queue:
     def get_next(self):
         #check if the queue is not empty
         if  self.humans_first_node != self.last_humans_node:
-            temp = self.humans_first_node.first_elem.human
-            self.humans_first_node.first_elem = temp.next_node            
+            temp = self.humans_first_node.next_node.human
+            self.humans_first_node.next_node = temp.next_node
             temp.next_node = None
             temp.preview_node = None
+            self.number_of_person-=1
             return temp.human
 
             #check if del of node don't remove the instance of human inside
@@ -120,15 +133,15 @@ class Queue:
 
 # get_next_blood_type(self, blood_type) Return the first human with this specific blood type.
     def get_next_blood_type(self, blood_type):
-        index = 1
-        temp = self.humans_first_node.first_elem
+        temp = self.humans_first_node.next_node
         while temp != self.last_humans_node:
             if temp.human.blood_type == blood_type:
                 #remove the person from the list
                 temp.next_node.preview_node = temp.preview_node
-                temp.preview_node.next_node= temp.next_node
+                temp.preview_node.next_node = temp.next_node
                 temp.next_node = None
                 temp.preview_node = None
+                self.number_of_person -=1
                 return temp.human
             else:
                 temp = temp.next_node
@@ -136,7 +149,7 @@ class Queue:
 
 # sort_by_age(self) Sort the queue so that the older ones are before the younger ones and all the prioritary persons are before the others.
     def sort_by_age(self):
-        cursor1 = self.humans_first_node.first_elem
+        cursor1 = self.humans_first_node.next_node
         while cursor1 != self.last_humans_node:
             cursor2 = cursor1.next_node
             while cursor2 != self.last_humans_node:
@@ -156,12 +169,34 @@ class Queue:
         if self.humans_first_node == self.last_humans_node:
             return
         else:
-            temp = self.humans_first_node.first_elem
+            temp = self.humans_first_node.next_node
             print(f"{'-'* 50}")
             while temp != self.last_humans_node:
                 print(temp.human)
                 temp = temp.next_node
             print(temp.human)
+
+    def rearange_queue(self):
+        if self.humans_first_node != self.last_humans_node:
+            temp = None
+            cursor = self.humans_first_node.next_node
+            have_swap = True
+            while have_swap:
+                have_swap = False
+                if(len(cursor.human.family)>self.number_of_person/2):
+                    pass
+                while cursor != self.last_humans_node:
+                    if cursor.human.is_in_family(cursor.next_node.human):
+                        have_swap = True
+                        temp = cursor
+                        # remove the person from the list
+                        cursor.next_node.preview_node = cursor.preview_node
+                        cursor.preview_node.next_node = cursor.next_node
+                        cursor.next_node = None
+                        cursor.preview_node = None
+
+
+
 my_queue = Queue()
 p1= Human(1, "aaa", 1, False, "A")
 p2= Human(2,"bbb",2,True,"B")
@@ -184,7 +219,9 @@ print(my_queue)
 # Bonus: Don’t use any of the following built-in methods: list.insert, list.pop, list.index, list.sort, sorted.
 
 # Part 2
-# Create an attribute family for the Human class. Initialized as empty, family is a list of all the humans that are living in the same house with this human. Add a method add_family_member(self, person) that adds the person to this human’s family and this human to the person’s family.
+# Create an attribute family for the Human class. Initialized as empty,
+# family is a list of all the humans that are living in the same house with this human.
+# Add a method add_family_member(self, person) that adds the person to this human’s family and this human to the person’s family.
 
 # Add the rearange_queue(self) method to the Queue class, so that there is no two members of the same family one after the other.
 

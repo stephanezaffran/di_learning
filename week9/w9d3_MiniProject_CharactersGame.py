@@ -146,3 +146,7 @@ fwarrior.brawl(fmage)
 fmage.summon()
 fmage.curse(fwarrior)
 fmage.cast_spell(fdruid)
+
+
+
+
