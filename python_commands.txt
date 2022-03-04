@@ -1,13 +1,48 @@
-virtualenvs:
+------------------ virtualenvs: ---------
+
 pip3 install virtualenv|
 create folder (preferred at the home folder) called virtualenvs (where we will create all of our virtualenvs)
 create virtualenv: virtualenv ~/virtualenvs/name-of-our-virtualenv
 activate ("login") to our virtualenv:
 for mac / linux users: source ~/virtualenvs/name-of-our-virtualenv/bin/activate
 |windows: ~/virtualenvs/name-of-our-virtualenv/Scripts/activate
-deactive ("logout"): deactivate
+deactiveate ("logout"): deactivate
 to see the packages (projects inside our virtualenv) pip3 list (modifié)
 
+For windows: python -m pip --version
+
+------------------ requirement file -----
+
+It is good practice to generate and share a requirements.txt file when uploading your code to Github
+containing a list of every required module used in your python code and their version.
+
+------------------ generate --------------
+
+generate a requirements file for your python project with pipreqs
+
+    $ pip install pipreqs
+
+To generate a requirements file, just run this in your project folder:
+
+    $ pipreqs .
+
+There is also an alternate way to do this using pip freeze inside your project folder:
+
+    $ pip freeze > requirements.txt
+
+install every required module from a requirements.txt
+    pip install -r requirements.txt
+
+------requirement file ----------
+
+appnope==0.1.0
+backcall==0.1.0
+beautifulsoup4==4.6.3
+bleach==2.1.4
+certifi==2018.8.24
+
+
+------import modules----------
 
 # once by importing the whole module
 # import operators
@@ -27,4 +62,200 @@ from operators import addOperator as addOpt, divideOperator as divideOpt
 
 print(addOpt(1, 2))
 print(divideOpt(10, 5))
+
+-------------- time ------------------------------
+import time
+
+before = time.time()  // from 1 1 1970 number of secondes
+long_number = 1000**1000
+after = time.time()
+
+print(f"It took {after - before} seconds to execute 1000**1000")
+
+
+-------------- datetime --------------------------
+
+import datetime
+
+today_date = datetime.date.today()
+actual_datetime = datetime.datetime.now()
+in_15_hours = actual_datetime + datetime.timdelta(hours=15, minutes=10)
+
+print(f"Today is the {today_date.day}/{today_date.month}")
+print(f"In 15 hours and 10 minutes it will be the {in_15_hours.day}/{in_15_hours.month}")
+----------------
+
+import datetime
+
+today_date = datetime.date.today()
+actual_datetime = datetime.datetime.now()
+in_15_hours = actual_datetime + datetime.timdelta(hours=15, minutes=10)
+
+print(f"Today is the {today_date.strftime("%d/%m")}")
+print(f"In 15 hours and 10 minutes it will be the {in_15_hours.strftime("%d/%m")}")
+
+----------------- OS module ---------------------------
+
+--- files / directories ---
+os.scandir(directory) to get a list of all the entries in a directory,
+os.walk(directory) to list files recursively (diving into every directory).
+
+--- create directories ---
+os.mkdir/os.makedirs  ---  for a single directory or  for multiple folders
+os.rename    ---  rename directories with or
+ os.remove / os.removedirs --- remove them with
+
+ ------------ Manipulate Files Names And Paths - os.path module ---------
+
+os.path.exists(filename) ---  check if it exists with
+
+os.path.isfile and os.path.isdir --- it’s a file or a directory
+
+os.path.abspath(filename) ---  absolute path with /test.txt
+
+os.path.basename(abspath) ---  the opposite c://......
+
+os.path.dirname --- name of its parent directory
+
+os.path.join(dir, file) --- combine two paths with
+
+os.path.splitext(filename) --- get the extension of a file
+
+For higher-level path functions, see the pathlib module.
+
+--------------------------- file i/o ------------------------
+
+f = open('secrets.txt')
+data = f.read()
+f.write('\nThis is text being appended to test.txt')
+f.write('\nAnd another line here.')
+f.close()
+
+
+f.read()
+f.readline() # Reads one entire line from the file. Reads a file till the newline
+f.readlines() # Reads a file line by line, returns a list of the lines in the file
+
+f.write(str)
+f.writelines(seq) # Writes a list of lines to the file.
+# Example :
+# lines=["Hello world.\n", "Welcome to Tel Aviv.\n"]
+# f.writelines(lines)
+
+f.seek(offset)
+f.tell() #   ----  get the position of the cursor
+
+f.close()
+
+--------------------- file i/o safe mode ---------------
+
+
+with open('output.txt', 'w') as f:   ---- include the close()
+    for i in range(10):
+       f.write("this is line: %i\n"%i)
+
+
+try:
+   f = open("secrets.txt",encoding = 'utf-8')
+   # perform file operations
+finally: -- close if problem
+   f.close()
+
+
+                  | r   r+   w   w+   a   a+
+------------------|--------------------------
+read              | +   +        +        +
+write             |     +    +   +    +   +
+write after seek  |     +    +   +
+create            |          +   +    +   +
+truncate          |          +   +
+position at start | +   +    +   +
+position at end   |                   +   +
+
+
+
+
+------------- Json ------------------------
+import json
+
+my_family = {
+    "parents":['Beth', 'Jerry'],
+    "children":['Summer', 'Morty']
+}
+
+json_file = "my_file.json"
+
+with open(json_file, 'w') as file_obj:
+    json.dump(my_family, file_obj)        ------ json.dump() convert dic to json and write in file
+
+    json.dump(my_family, file_obj, indent = 2, sort_keys=True)
+
+    var = json.dumps(my_family, file_obj)   ---- json.dumps() convert dic to json and write in var
+
+
+
+
+with open(json_file, 'r') as file_obj:  ----   get the file to file_obj
+    my_family = json.load(file_obj)     -----  unpack the json format to my_family as dic format
+
+
+-------  Dictionary To JSON --------
+
+import json
+
+my_family = {
+    "parents":['Beth', 'Jerry'],
+    "children":['Summer', 'Morty']
+}
+
+
+--------------
+
+import json
+
+
+def print_child(child):
+	print("name: ", child["firstName"])
+	print("age: ", child["age"])
+
+
+with open("file.json", "r+") as file:
+	family = json.load(file)
+
+	childrens = family["children"]
+	for child in childrens:
+		print_child(child)
+
+	for i in range(len(childrens)):
+		childrens[i]["favorite_color"] = "white"
+
+	file.seek(0)
+	json.dump(family, file, indent=2)
+
+------------- API ---------------------
+
+pip install requests
+import requests
+
+
+# C      R    U    D
+# |      |    |    |
+# post  get  put  delete
+
+
+--------------  GET Request ---------------
+
+response = requests.get("http://api.open-notify.org/iss-now.json")
+
+print(response.text) ---- response serialized Json  => # {'message': 'success', 'iss_position': {'longitude': '-29.3427', 'latitude': '-16.5135'}, 'timestamp': 1588684451}
+
+print(response.header) => # {'Server': 'nginx/1.10.3', 'Date': 'Tue, 05 May 2020 13:16:04 GMT', 'Content-Type': 'application/json', 'Content-Length': '114', 'Connection': 'keep-alive', 'access-control-allow-origin': '*'}
+
+print(response.status_code) ==> 200 ---- status_code
+
+
+------------ get parameters ---------------
+
+parameters = {"lat": 31.771959, "lon": 35.217018}
+response = requests.get("http://api.open-notify.org/iss-pass.json", params=parameters)
 

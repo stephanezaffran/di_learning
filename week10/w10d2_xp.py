@@ -10,9 +10,9 @@
 from string import ascii_uppercase,ascii_lowercase
 from random import randint, random, choice
 import module1
-import w9d1_create_modules.operator
-from w9d1_create_modules.operator import addOperator
-from w9d1_create_modules.operator import divideOperator as my_divid
+import w10d1_create_modules.operator
+from w10d1_create_modules.operator import addOperator
+from w10d1_create_modules.operator import divideOperator as my_divid
 
 
 
