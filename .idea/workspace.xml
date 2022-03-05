@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="36e9549c-6031-4d3d-9b3a-9cabcb49e36d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/week10/w10d1_create_modules/w10d4_dailyChallenge_textAnalysis_gleb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week10/w10d2-xp2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week10/w10d5_dailyChalenge.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week10/w10d5_miniProject_Anagram/anagram_checker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week10/w10d5_miniProject_Anagram/anagrams.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/week10/w10d5_miniProject_Anagram/sowpods.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/formation_python.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/python_commands.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/week10/module1.py" beforeDir="false" afterPath="$PROJECT_DIR$/week10/module1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week10/w10d2_xp.py" beforeDir="false" afterPath="$PROJECT_DIR$/week10/w10d2_xp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week10/w9d1_create_modules/calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/week10/w10d1_create_modules/calculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week10/w9d1_create_modules/operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/week10/w10d1_create_modules/operator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +45,7 @@
       <recent name="C:\Users\User\Desktop\formation_python\week10" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.anagrams">
+  <component name="RunManager" selected="Python.module1">
     <configuration name="anagram_checker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="formation_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,6 +80,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/week10/w10d5_miniProject_Anagram/anagrams.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="module1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\virtualenvs\formation_python_env\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/week10" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/week10/module1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,34 +172,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="w10d4_dailyChallenge_textAnalysis_gleb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="formation_python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/week10/w10d1_create_modules" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/week10/w10d1_create_modules/w10d4_dailyChallenge_textAnalysis_gleb.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.module1" />
         <item itemvalue="Python.anagrams" />
         <item itemvalue="Python.anagram_checker" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.w10d1_course_ex" />
-        <item itemvalue="Python.w10d4_dailyChallenge_textAnalysis_gleb" />
       </list>
     </recent_temporary>
   </component>
@@ -183,6 +193,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -193,5 +214,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
