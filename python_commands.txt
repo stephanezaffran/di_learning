@@ -1,3 +1,205 @@
+----------------- *args / **kwargs ---------------------
+
+def check_arguments_keywordedarguments (required_arg, *args, **kwargs):
+    print(required_arg)
+    if args:
+       print(f"These are the arguments {args}")  ---> These are the arguments (1, 2, 'hey') // You get a tuple
+    if kwargs:
+        print(kwargs) ---> {'name': 'Sarah', 'age': 24} // You get a dictionary
+
+check_arguments_keywordedarguments("required argument")
+check_arguments_keywordedarguments("required argument", 1, 2, 'hey')
+check_arguments_keywordedarguments("required argument", 1, 2, 'hey', name="Sarah", age=24)
+
+----------------- exceptions -------------------------
+try:
+    a = 1/0
+
+except Exception as e:
+    print(e) -----> division by zero
+
+-----------------------
+
+try:
+    l = [1, 2, 3]
+    l[4]
+
+except IndexError as e:
+    print(e)  -----> list index out of range
+
+-----------------------
+
+try:
+   # do something
+   pass
+
+except ValueError: ---> if exception == valueError .....
+   # handle ValueError exception
+   pass
+
+except (TypeError, ZeroDivisionError):
+   # handle multiple exceptions
+   # TypeError and ZeroDivisionError
+   pass
+
+except:
+   # handle all other exceptions
+   pass
+
+-----------------------
+
+valid_flag = False
+while not valid_flag:
+    userage = input("How old are you?")
+    try:    # TRY THIS
+        userage    = int(userage)
+    except: # IF YOU GOT AN ERROR
+        print("Wrong age!")
+    else:   # ELSE
+        valid_flag = True
+    finally:
+        print('There may or may not have been an exception.')
+
+print("Next year, your age will be",userage+1)
+
+
+------------- Raising An Exception --------------------
+
+x = 10
+if x > 5:
+    raise Exception('x should not exceed 5. The value of x was {x}'.format(x=x))
+#The error that will appear is your own custom error
+#Traceback (most recent call last):
+  #File "pyblog/app.py", line 52, in <module>
+    #raise Exception('x should not exceed 5. The value of x was {x}'.format(x=x))
+#Exception: x should not exceed 5. The value of x was 10'
+
+#Process finished with exit code 1
+
+------------------ Inheritance ------------------------
+
+class Animal():
+    def __init__(self, type, number_legs, sound):
+        self.type = type
+        self.number_legs = number_legs
+        self.sound = sound
+
+    def func(self):
+        print("I'm being called from the Parent class")
+
+
+class Dog(Animal):
+    def __init__(self, type, number_legs, sound, fetch_ball):
+        super().__init__(type, number_legs, sound)
+        # Or : Animal.__init__(self,type, number_legs, sound)
+        self.fetch_ball = fetch_ball
+
+
+    def func(self):
+        print("I'm actually being called from the Child class")
+        print("But...")
+        # Calling the `func()` method from the Parent class.
+        super(ChildClass, self).func()
+
+
+------------------ Encapsulation ------------------------
+
+class Computer():
+
+    def __init__(self):
+        self.name = "Apple Computer" # public
+        self.__max_price = 900  ------>  private attribut
+
+    def sell(self):            # public method
+        print(f"Selling Price: {self.__max_price}")
+
+    def __sell(self):          # private method
+      print('This is private method')
+
+    def set_max_price(self, price):
+        self.__max_price = price
+
+c = Computer()
+c.sell() ----> Selling Price: 900 (public method)
+
+
+------------------- Polymorphism ---------------------
+
+class Parrot():
+
+    def fly(self):
+        print("Parrot can fly")
+
+    def swim(self):
+        print("Parrot can't swim")
+
+class Penguin():
+
+    def fly(self):
+        print("Penguin can't fly")
+
+    def swim(self):
+        print("Penguin can swim")
+
+---- common interface ---
+
+def flying_test(bird): ---> receive an object and apply the fly function of this object, get different
+    bird.fly()                      result depend of the object
+
+---- passing the object ---
+
+blu = Parrot()
+flying_test(blu)  --->   Parrot can fly
+
+peggy = Penguin()
+flying_test(peggy) ---> Penguin can't fly
+
+
+----------------- class attribute ---------------------
+
+class Dog():
+    number_of_dogs = 0
+
+    def __init__(self, name_of_the_dog):
+        # Increment the number of dogs
+        Dog.number_of_dogs += 1
+
+my_dog = Dog("Rex")
+my_dog2 = Dog("Bernie V")
+print("Curently, there are {} dogs".format(Dog.number_of_dogs)) ---> 2 dogs
+
+---------------- @staticmethod ----------
+class MyClass:
+  @staticmethod
+  def add(a, b):
+    return a + b
+
+print(MyClass.add(3, 6))
+
+---------------- @classmethod ----------
+
+class MyClass:
+  __counter = 0
+
+  @classmethod
+  def add(cls,a):
+    return cls.__counter + a
+
+---------------- @property --------------
+
+class MyClass:
+  def __init__(self, first_name, last_name):
+    self.__first_name = first_name
+    self.__last_name = last_name
+
+  @property
+  def email(self):
+    return "{}.{}@gmail.com".format(self.__first_name,  self.__last_name )
+
+  @email.setter
+  def email(self, name):
+    self.__first_name = name
+
 ------------------ virtualenvs: ---------
 
 pip3 install virtualenv|
@@ -16,7 +218,15 @@ For windows: python -m pip --version
 It is good practice to generate and share a requirements.txt file when uploading your code to Github
 containing a list of every required module used in your python code and their version.
 
------------------- generate --------------
+----- exemple -----
+
+appnope==0.1.0
+backcall==0.1.0
+beautifulsoup4==4.6.3
+bleach==2.1.4
+certifi==2018.8.24
+
+------------------ generate requirements --------------
 
 generate a requirements file for your python project with pipreqs
 
@@ -32,15 +242,6 @@ There is also an alternate way to do this using pip freeze inside your project f
 
 install every required module from a requirements.txt
     pip install -r requirements.txt
-
-------requirement file ----------
-
-appnope==0.1.0
-backcall==0.1.0
-beautifulsoup4==4.6.3
-bleach==2.1.4
-certifi==2018.8.24
-
 
 ------import modules----------
 
