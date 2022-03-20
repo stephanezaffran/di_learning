@@ -1,0 +1,145 @@
+
+
+------    The Init File ( __init__.py )    -------
+
+import flask
+app = flask.Flask(__name__) # Remember: __name__ is the name of the file where the code is written
+from app import routes
+
+--------------      Routes.Py      ----------------
+
+
+
+import flask
+from app import app    # app.app is package_name.variable_name
+
+@app.route("/")
+def index():
+    posts = [
+        {"author":"John", "body":"I love python"},
+        {"author":"Fish", "body":"I love water"},
+        {"author":"Herpetolog", "body":"I love pythons"},
+    ]
+    return flask.render_template('index.html',posts=posts)
+
+--------------  Main File - wsgi.py      -------------------
+
+from app import app
+
+if __name__ == "__main__":         # Protect this code to be ran if he is imported
+    app.run(port=5000, debug=True)
+
+----------     flask <command>    ----------------
+
+The first command that we want to use is $ flask run. This command will launch the main app of the project.
+ But to make this work, we need to tell flask which file is the main one. This is done by typing:
+
+-----    commmand   -----
+>> Unix: $ export FLASK_APP=<your_main_file>
+>> Windows: $ set FLASK_APP=<your_main_file>
+
+And now we can launch $ flask run
+
+----------     Forms.Py File    ----------------
+
+pip install flask-wtf
+
+
+ => add a hidden_tag to each form
+        app.config['SECRET_KEY'] = 'my-code'
+
+--- form.py ---
+
+import flask_wtf
+import wtforms
+
+class Form1(flask_wtf.FlaskForm):
+    username     = wtforms.StringField("Name")
+    password = wtforms.PasswordField("Password")
+    bio      = wtforms.StringField("Bio")
+    submit   = wtforms.SubmitField("Submit")
+
+
+---- routes.py------
+
+@app.route('/myform')
+def myform():
+    form = Form1()
+    return flask.render_template_string("form_template.HTML", form=form)
+
+
+------ in the html file ------
+
+ <form method="POST">
+{{ form.hidden_tag() }}
+
+{{ form.username.label }}
+{{ form.username(size=32) }}
+
+{{ form.password.label }}
+{{ form.password(size=32) }}
+
+{{ form.bio.label }}
+{{ form.bio(size=240) }}
+
+{{ form.submit() }}
+</form>
+
+
+------ si on veut recuperer les donnees de l'utilisateur dans pyton ------
+
+@app.route('/myform', methods=("GET","POST"))    <------- very important
+def myform():
+    form = Form()
+    if form.validate_on_submit(): # Check if the form has been filled
+
+        username = form.username.data # Get
+        password = form.password.data #   The
+        bio      = form.bio.data      #     Data
+
+        print("Here is what I got from the form:")
+        print("username:", username)
+        print("password:", password)
+        print("bio:", bio)
+        # Do something with the data
+
+        return flask.redirect('/')
+    return flask.render_template_string(form_template, form=form)
+
+
+---------------------   form field  --------------------------
+
+wtforms.StringField                                         - Basic string field
+wtforms.PasswordField                                       - Hidden text field
+wtforms.BooleanField                                        - True of false field. Basically would show up on a form as a checkbox.
+wtforms.RadioField(choices=['m','f])                        - List of radio buttons
+wtforms.SelectField(label="city",choices=['tlv','haifa])    - List of given choices
+wtforms.FileField()/MultipleFileField()                     - file(s) upload field
+wtforms.SubmitField                                         - Submit button
+
+
+---------------------   Validators  --------------------------
+
+DataRequired()
+Email()
+Equalto(another_field)
+Length(min, max)
+NumberRange(min, max)
+Regexp(regex)
+Url()
+
+class Form(flask_wtf.FlaskForm):
+    username = wtforms.StringField("Name", [wtforms.validators.Length(min=4, max=25, message="too short string")])
+    password = wtforms.PasswordField("Password", [wtforms.validators.DataRequired()])
+    bio      = wtforms.StringField("Bio")
+    submit   = wtforms.SubmitField("Submit")
+
+------------------   Creating Validator  ----------------------
+
+def my_length_check(form, field):  <----- use as validator
+    if len(field.data) > 5:
+        raise wtforms.ValidationError('Field must be less than 50 characters')
+
+----- exemple -----
+username = wtforms.StringField("Name", [my_length_check])
+
